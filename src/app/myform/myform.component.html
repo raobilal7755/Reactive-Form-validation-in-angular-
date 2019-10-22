@@ -1,0 +1,156 @@
+<h1 class="text-white bg-danger text-center p-4">Reactive Form in Angular 8</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- form -->
+           <form [formGroup]='myform' (ngSubmit)='myfun(myform)'>
+
+                <div class="form-group">
+                    <label for="">Username :</label>
+                    <input type="text" formControlName='fname' name="" id="" class="form-control" placeholder="Enter your name"> 
+                    <!-- errors sms -->
+                    <div class='alert alert-danger' *ngIf='!fname.valid && (fname.touched || fname.dirty)'>
+                        <div *ngIf="fname.errors['required']">
+                            please fill the field..
+                        </div>
+                        <div *ngIf="fname.errors['minlength']">
+                           sir minlength is 3...
+                        </div>
+                        <div *ngIf="fname.errors['maxlength']">
+                            sir maxlength is 12
+                        </div>
+                    </div>  
+                    <!-- end -->
+                </div>
+
+                <div class="form-group">
+                    <label for="">Lastname :</label>
+                    <input type="text" formControlName='lname' name="" id="" class="form-control" placeholder="Enter your lname">
+                    <!-- errors sms -->
+                    <div class='alert alert-danger' *ngIf='!lname.valid && (lname.touched || lname.dirty)'>
+                            <div *ngIf="lname.errors['required']">
+                                please fill the field..
+                            </div>
+                            <div *ngIf="lname.errors['minlength']">
+                               sir minlength is 3...
+                            </div>
+                            <div *ngIf="lname.errors['maxlength']">
+                                sir maxlength is 12
+                            </div>
+                        </div>  
+                        <!-- end -->
+                </div>
+
+
+                <div class="form-group">
+                    <label for="">Email :</label>
+                    <input type="text" formControlName='email' name="" id="" class="form-control" placeholder="Enter your email">
+                    <!-- errors sms -->
+                    <div class='alert alert-danger' *ngIf='!email.valid && (email.touched || email.dirty)'>
+                            <div *ngIf="email.errors['required']">
+                                please fill the field..
+                            </div>
+                            <div *ngIf="email.errors['minlength']">
+                               sir minlength is 3...
+                            </div>
+                            <div *ngIf="email.errors['maxlength']">
+                                sir maxlength is 12
+                            </div>
+                            <div *ngIf="email.errors['email']">
+                                sir please correct email pattern
+                            </div>
+                        </div>  
+                        <!-- end -->
+                </div>
+
+
+
+                    <h6 class="text-center text-white">Address Portion</h6>
+                <!-- address portion -->
+                <div formGroupName='address'>
+
+                    <div class="form-group">
+                        <label for="">street :</label>
+                        <input type="text" formControlName='street' name="" id="" class="form-control" placeholder="Enter your street">
+
+                         <!-- errors sms -->
+                    <div class='alert alert-danger' *ngIf='!street.valid && (street.touched || street.dirty)'>
+                            <div *ngIf="street.errors['required']">
+                                please fill the field..
+                            </div>
+                            <div *ngIf="street.errors['minlength']">
+                               sir minlength is 3...
+                            </div>
+                            <div *ngIf="street.errors['maxlength']">
+                                sir maxlength is 12
+                            </div>
+                        </div>  
+                        <!-- end -->
+                    </div>
+
+                    <div class="form-group">
+                            <label for="">City :</label>
+                            <input type="text" formControlName='city' name="" id="" class="form-control" placeholder="Enter your city">
+                             <!-- errors sms -->
+                    <div class='alert alert-danger' *ngIf='!city.valid && (city.touched || city.dirty)'>
+                            <div *ngIf="city.errors['required']">
+                                please fill the field..
+                            </div>
+                            <div *ngIf="city.errors['minlength']">
+                               sir minlength is 3...
+                            </div>
+                            <div *ngIf="city.errors['maxlength']">
+                                sir maxlength is 12
+                            </div>
+                        </div>  
+                        <!-- end -->
+                    </div>
+
+                    <div class="form-group">
+                            <label for="">State :</label>
+                            <input type="text" formControlName='state' name="" id="" class="form-control" placeholder="Enter your state">
+                             <!-- errors sms -->
+                    <div class='alert alert-danger' *ngIf='!state.valid && (state.touched || state.dirty)'>
+                            <div *ngIf="state.errors['required']">
+                                please fill the field..
+                            </div>
+                            <div *ngIf="state.errors['minlength']">
+                               sir minlength is 3...
+                            </div>
+                            <div *ngIf="state.errors['maxlength']">
+                                sir maxlength is 12
+                            </div>
+                        </div>  
+                        <!-- end -->
+                    </div>
+
+                    <div class="form-group">
+                            <label for="">zipcode :</label>
+                            <input type="text" formControlName='zipcode' name="" id="" class="form-control" placeholder="Enter your zipcode">
+
+                             <!-- errors sms -->
+                    <div class='alert alert-danger' *ngIf='!zipcode.valid && (zipcode.touched || zipcode.dirty)'>
+                            <div *ngIf="zipcode.errors['required']">
+                                please fill the field..
+                            </div>
+                            <div *ngIf="zipcode.errors['minlength']">
+                               sir minlength is 3...
+                            </div>
+                            <div *ngIf="zipcode.errors['maxlength']">
+                                sir maxlength is 12
+                            </div>
+                        </div>  
+                        <!-- end -->
+                    </div>
+
+                </div>
+
+                <br>
+                <input type="submit" value="Submit Form" class="btn btn-outline-warning ">
+                <br><br>
+                <br><br>
+           </form>
+            <!-- end form -->
+        </div>
+    </div>
+</div>
